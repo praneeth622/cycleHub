@@ -25,6 +25,7 @@ function Signup() {
             const users = await createUserWithEmailAndPassword(auth, email, password);
 
             // console.log(users)
+            // console.log(auth)
 
             const user = {
                 name: name,
