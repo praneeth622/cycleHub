@@ -21,6 +21,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Allproducts from './pages/allproducts/Allproducts';
 import Contact from './pages/contact/contact';
+import AboutPage from './pages/allproducts/about/about';
 function App() {
   return (
     <MyState>
@@ -42,6 +43,7 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/about' element={<AboutPage/>} />
           <Route path='/productinfo/:id' element={<ProductInfo/>} />
           <Route path='/addproduct' element={
             <ProtectedRouteForAdmin>

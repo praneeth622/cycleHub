@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Layout from '../../components/layout/Layout';
+import myContext from '../../context/data/myContext'
 import emailjs from '@emailjs/browser'
 function Contact() {
+    const context = useContext(myContext)
+    const { mode} = context
+
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -42,8 +46,8 @@ function Contact() {
 
     return (
         <Layout>
-            <div className="max-w-md mx-auto mt-8 mb-8 p-6 border rounded-lg shadow-lg">
-                <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
+            <div className="max-w-md mx-auto mt-8 mb-8 p-6 border rounded-lg shadow-lg" style={{ color: mode === 'dark' ? 'white' : '' }} >
+                <h1 className="text-2xl font-bold mb-4 " >Contact Us</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="name" className="block font-semibold mb-1">Name</label>
