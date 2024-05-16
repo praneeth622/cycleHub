@@ -42,7 +42,7 @@ function Cart() {
   const shipping = parseInt(100);
 
   const grandTotal = shipping + totalAmout;
-  // console.log(grandTotal)
+  console.log(grandTotal)
  // Payment Intigration
 
   const [name, setName] = useState("")
@@ -78,20 +78,13 @@ function Cart() {
         }
       )
     }
-
-    var options = {
-      key: "",
-      key_secret: "",
-      amount: parseInt(grandTotal * 100),
-      currency: "INR",
-      order_receipt: 'order_rcptid_' + name,
-      name: "Cycle",
-      description: "for testing purpose",
-      handler: function (response) {
-        console.log(response)
-        toast.success('Payment Successful')
-
-        const paymentId = response.razorpay_payment_id;
+    //Payment
+    const payment = ()=>{
+        
+        const randomNumber = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
+        const invoiceId = randomNumber.toString();
+        const prefixedInvoiceId = `INV-${invoiceId}`;
+        const paymentId = prefixedInvoiceId;
 
         const orderInfo = {
           cartItems,
@@ -110,23 +103,17 @@ function Cart() {
         }
 
         try {
-
           const orderRef = collection(fireDB, 'order');
           addDoc(orderRef, orderInfo);
+          toast.success('Payment Successful')
 
         } catch (error) {
           console.log(error)
+          toast.error("Error in payment")
         }
-      },
-
-      theme: {
-        color: "#3399cc"
       }
-    };
 
-    var pay = new window.Razorpay(options);
-    pay.open();
-    console.log(pay)
+    payment();
 
 
   }
