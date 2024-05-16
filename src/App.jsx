@@ -21,7 +21,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Allproducts from './pages/allproducts/Allproducts';
 import Contact from './pages/contact/contact';
-import AboutPage from './pages/allproducts/about/about';
+import AboutPage from './pages/about/about';
 function App() {
   return (
     <MyState>
