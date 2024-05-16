@@ -9,7 +9,7 @@ const AboutPage = () => {
     <Layout>
         <div className=" min-h-screen py-8 px-4 sm:px-6 lg:px-8" style={{ color: mode === 'dark' ? 'white' : '' }}>
         <div className="max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold text-center mb-8">About Our Cycle Management System</h1>
+            <h1 className="text-3xl font-bold text-center mb-8">About Our CycleHub System</h1>
 
             <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
