@@ -39,7 +39,7 @@ function Cart() {
     console.log(temp)
   }, [cartItems])
 
-  const shipping = parseInt(100);
+  const shipping = parseInt(10);
 
   const grandTotal = shipping + totalAmout;
   console.log(grandTotal)
@@ -204,7 +204,7 @@ function Cart() {
               <p className="text-gray-700" style={{ color: mode === 'dark' ? 'white' : '' }}>₹{totalAmout}</p>
             </div>
             <div className="flex justify-between">
-              <p className="text-gray-700" style={{ color: mode === 'dark' ? 'white' : '' }}>Shipping</p>
+              <p className="text-gray-700" style={{ color: mode === 'dark' ? 'white' : '' }}>Gateway Charge </p>
               <p className="text-gray-700" style={{ color: mode === 'dark' ? 'white' : '' }}>₹{shipping}</p>
             </div>
             <hr className="my-4" />
