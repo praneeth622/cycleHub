@@ -74,7 +74,7 @@ function Navbar() {
                   </div> : ""}
 
                   {user ? <div className="flow-root">  <Link to={'/order'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
-                    Order
+                    Your Orders
                   </Link> </div>: <div className="flow-root"> <Link to={'/signup'}  className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Signup
                     </Link> </div>}
@@ -142,7 +142,7 @@ function Navbar() {
                     Admin
                   </Link> : ""}
                   {user ?  <Link to={'/order'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
-                    Order
+                    Your Orders
                   </Link> :   <Link to={'/signup'}  className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Signup
                     </Link>}
