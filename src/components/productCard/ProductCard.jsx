@@ -44,8 +44,8 @@ function ProductCard() {
                                     <div className="p-5 border-t-2">
                                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style={{ color: mode === 'dark' ? 'white' : '', }}>CycleHub</h2>
                                         <h1 className="title-font text-lg font-medium text-gray-900 mb-3" style={{ color: mode === 'dark' ? 'white' : '', }}>{title}</h1>
-                                        {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
-                                        <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹{price}</p>
+                                        
+                                        <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>Price per hr : ₹{price}</p>
                                         <div className=" flex justify-center">
                                             <button type="button" 
                                             onClick={()=> addCart(item)}

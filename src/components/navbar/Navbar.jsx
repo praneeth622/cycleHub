@@ -133,6 +133,10 @@ function Navbar() {
                     All Products
                   </Link>
 
+                  <Link to={'/about'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    About Us
+                  </Link>
+
                   {user?.user?.email === 'qwerty@gmail.com' ? 
                    <Link to={'/dashboard'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Admin
@@ -146,6 +150,11 @@ function Navbar() {
                  {user ?  <a onClick={logout} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Logout
                   </a> : ""}
+
+                  <Link to={'/contact'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    Contact Us
+                  </Link>
+                  
                 </div>
 
                 <div className="flex lg:ml-6">
