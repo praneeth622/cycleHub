@@ -78,7 +78,58 @@ function Cart() {
         }
       )
     }
-    //Payment
+    //Razorpay Payment gateway
+
+    var options = {
+      key: "rzp_test_zgAAsQPNkntJ1P",
+      key_secret: "Qhj1owYbcPBUWhAgBP8MIgnc",
+      amount: parseInt(grandTotal * 100),
+      currency: "INR",
+      order_receipt: 'order_rcptid_' + name,
+      name: "CycleHub",
+      description: "for testing purpose",
+      handler: function (response) {
+        console.log(response)
+        toast.success('Payment Successful')
+
+        const paymentId = response.razorpay_payment_id;
+
+        const orderInfo = {
+          cartItems,
+          addressInfo,
+          date: new Date().toLocaleString(
+            "en-US",
+            {
+              month: "short",
+              day: "2-digit",
+              year: "numeric",
+            }
+          ),
+          email: JSON.parse(localStorage.getItem("user")).user.email,
+          userid: JSON.parse(localStorage.getItem("user")).user.uid,
+          paymentId
+        }
+
+        try {
+
+          const orderRef = collection(fireDB, 'order');
+          addDoc(orderRef, orderInfo);
+
+        } catch (error) {
+          console.log(error)
+        }
+      },
+
+      theme: {
+        color: "#3399cc"
+      }
+    };
+
+    var pay = new window.Razorpay(options);
+    pay.open();
+    console.log(pay)
+
+    //Regular payment
     const payment = ()=>{
         
         const randomNumber = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
@@ -113,7 +164,7 @@ function Cart() {
         }
       }
 
-    payment();
+    //payment();
 
 
   }
