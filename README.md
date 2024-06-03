@@ -5,7 +5,6 @@ CycleHub is a website for cycling enthusiasts, built using React and Vite. This 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,13 +14,6 @@ CycleHub is a website for cycling enthusiasts, built using React and Vite. This 
 ## Introduction
 
 CycleHub is a web application designed to bring together cycling enthusiasts. The platform offers various features to enhance the cycling experience, including route planning, event scheduling, and community interactions.
-
-## Features
-
-- Route planning and sharing
-- Event scheduling
-- Community forums
-- User profiles
 
 ## Tech Stack
 
